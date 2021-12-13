@@ -1,0 +1,21 @@
+{% extends "cadastros/base.html" %}
+
+{% block title %}Acadêmico Brasil{% endblock %}
+
+{% block content %}
+    {% for vaga in vaga_list %}
+        <article>
+            <h2>
+                <a href="{{ vaga.get_absolute_url }}">
+                    {{ vaga.title }}
+
+                </a>
+            </h2>
+            <p class="date">
+                Publicado em {{ vaga.created }} por {{ vaga.author }}
+            </p>
+            {{ post.body|linebreaks|truncatewords:10 }}
+        </article>
+
+        {% endfor %}
+{% endblock %}

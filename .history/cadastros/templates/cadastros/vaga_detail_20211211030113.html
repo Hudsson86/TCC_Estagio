@@ -1,0 +1,12 @@
+{% extends "cadastros/base.html" %}
+
+{% block title %}{{ vaga.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ vaga.title }}</h2>
+    <p class="date">
+        Publicado em {{ vaga.created }} por {{ vaga.author }}
+    </p>
+    {{ vaga.body|linebreaks }}
+    
+{% endblock %}
